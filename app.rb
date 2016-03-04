@@ -40,14 +40,20 @@ class App < Sinatra::Base
   end
 
   get '/rss' do
-    rss_feed = ButterCMS::Feed.find(:rss)
-    atom_feed = ButterCMS::Feed.find(:atom)
-    sitemap = ButterCMS::Feed.find(:sitemap)
+    content_type 'text/xml'
+
+    rss_feed = ButterCMS::Feed.find(:rss).data
   end
 
   get '/atom' do
+    content_type 'text/xml'
+
+    atom_feed = ButterCMS::Feed.find(:atom).data
   end
 
   get '/sitemap' do
+    content_type 'text/xml'
+
+    sitemap = ButterCMS::Feed.find(:sitemap).data
   end
 end

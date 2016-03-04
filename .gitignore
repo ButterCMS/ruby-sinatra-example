@@ -1,0 +1,8 @@
+config/database.yml
+.bundle
+tmp
+.sass-cache
+.DS_Store
+.env
+.rspec
+.dropbox

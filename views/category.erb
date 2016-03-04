@@ -1,0 +1,11 @@
+<% content_for(:html_title) { @category.name } %>
+
+<!-- Category name -->
+<h2><%= @category.name %></h2>
+
+<!-- Recent posts -->
+<h4>Recent posts</h4>
+<% @category.recent_posts.each do |post| %>
+  <a href="<%= url("/post/#{post.slug}") %>"><%= post.title %></a>
+  <br>
+<% end %>

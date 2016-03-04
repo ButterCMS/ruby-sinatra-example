@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+      <%= yield_content(:html_title) ? "#{yield_content(:html_title)} | My Blog" : "My Blog" %>
+    </title>
+
+    <link rel="alternate" type="application/atom+xml" href="<%= url('/atom') %>">
+    <link rel="alternate" type="application/rss+xml" href="<%= url('/rss') %>">
+</head>
+<body>
+    <a href="<%= url('/') %>">Blog home</a>
+
+    <%= yield %>
+</body>
+</html>

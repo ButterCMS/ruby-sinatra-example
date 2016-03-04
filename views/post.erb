@@ -1,0 +1,36 @@
+<% content_for(:html_title) { @post.seo_title } %>
+
+<!-- Post title -->
+<h2><%= @post.title %></h2>
+
+<!-- Post author -->
+<a href="<%= url("/author/#{@post.author.slug}") %>"><%= "#{@post.author.first_name} #{@post.author.last_name}" %></a>
+
+<!-- Post categories -->
+<% @post.categories.each do |category| %>
+  <a href="<%= url("/category/#{category.slug}") %>"><%= category.name %></a>
+<% end %>
+
+<!-- Publish date -->
+<%= @post.published %>
+
+<!-- Post body -->
+<%= @post.body %>
+
+<!--
+// For commenting, we recommend https://disqus.com/
+// Create a Disqus account and paste your snippet below
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'XXXXXXXX';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+-->

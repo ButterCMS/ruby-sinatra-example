@@ -1,0 +1,18 @@
+<h2>Posts</h2>
+
+<!-- List of posts -->
+<% @posts.each do |post| %>
+  <a href="<%= url("/post/#{post.slug}") %>"><%= post.title %></a>
+  <br>
+<% end %>
+
+<!-- Pagination links -->
+<div>
+  <% if @previous_page %>
+  <a href="<%= url("/?page=#{@previous_page}") %>">Prev</a>
+  <% end %>
+
+  <% if @next_page %>
+  <a href="<%= url("/?page=#{@next_page}") %>">Next</a>
+  <% end %>
+</div>

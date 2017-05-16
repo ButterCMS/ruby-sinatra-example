@@ -11,3 +11,7 @@ Start server with [foreman](https://github.com/ddollar/foreman):
 ```
 $ foreman start
 ```
+
+### Other
+
+View these Sinatra [Blog engine](https://buttercms.com/rails-blog-engine/) and [Full CMS](https://buttercms.com/ruby-cms/) for other examples of using ButterCMS with Sinatra.
